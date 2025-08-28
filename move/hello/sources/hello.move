@@ -1,9 +1,7 @@
-/*
-/// Module: hello
 module hello::hello;
-*/
 
-// For Move coding conventions, see
-// https://docs.sui.io/concepts/sui-move-concepts/conventions
+use std::string::String;
 
-
+public fun get_message(): String {
+    b"Hello, world!".to_string()
+}

@@ -1,33 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sui Move Hello World
+
+This is a hybrid project combining [Next.js](https://nextjs.org) frontend with [Sui Move](https://docs.sui.io/) smart contracts. The Next.js portion was bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app), and includes a complete Sui Move package implementing a simple "Hello, world!" smart contract.
+
+## Project Structure
+
+- **Frontend**: Next.js 15 with React 19, TypeScript, and Tailwind CSS 4
+- **Smart Contracts**: Sui Move package in `move/hello/`
+- **Tooling**: Biome for linting and formatting
 
 ## Getting Started
 
-First, run the development server:
+### Frontend Development
+
+Run the Next.js development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Move Smart Contract
+
+The project includes a Sui Move package at `move/hello/` with:
+
+- **Module**: `hello::hello` - Implements a `get_message()` function
+- **Tests**: Comprehensive test suite including positive and negative cases
+- **Configuration**: Package manifest with MIT license
+
+To work with the Move package, you'll need the [Sui CLI](https://docs.sui.io/guides/developer/getting-started/sui-install) installed.
+
+## Code Quality
+
+The project uses Biome for consistent code formatting and linting:
+
+```bash
+npm run lint    # Check code quality
+npm run format  # Format code
+```
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+### Next.js Resources
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial
+- [Next.js GitHub repository](https://github.com/vercel/next.js) - feedback and contributions welcome
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Sui Move Resources
+
+- [Sui Documentation](https://docs.sui.io/) - comprehensive guide to Sui development
+- [Move Language Reference](https://move-language.github.io/move/) - learn the Move programming language
+- [Sui Move by Example](https://examples.sui.io/samples/move/) - practical Move examples
 
 ## Deploy on Vercel
 

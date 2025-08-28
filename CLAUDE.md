@@ -32,12 +32,12 @@ This is a Next.js project named "sui-move-hello-world" that is a hybrid project 
   - `app/globals.css` - Global Tailwind CSS styles
 
 ### Move Integration
-- **Move Package**: `move/hello/` contains a complete Sui Move package structure
-  - `Move.toml` - Package manifest configured for Sui Move (edition 2024.beta)
-  - `sources/hello.move` - Main module (currently minimal scaffold)
-  - `tests/hello_tests.move` - Test module (currently commented out)
+- **Move Package**: `move/hello/` contains a complete Sui Move package with working implementation
+  - `Move.toml` - Package manifest with MIT license and author attribution
+  - `sources/hello.move` - Main module implementing `get_message()` function returning "Hello, world!"
+  - `tests/hello_tests.move` - Comprehensive test suite with positive and negative test cases
   - Package address configured as `hello = "0x0"` for development
-  - Follows Sui Move coding conventions (see: https://docs.sui.io/concepts/sui-move-concepts/conventions)
+  - Follows Sui Move coding conventions and includes proper error handling
 
 ### Styling
 - Uses Tailwind CSS 4 with custom configuration

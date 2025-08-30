@@ -11,6 +11,8 @@ This is a Next.js project named "sui-move-hello-world" that is a hybrid project 
 - **TypeScript** for type safety
 - **Tailwind CSS 4** for styling with PostCSS
 - **Biome** for linting and formatting (instead of ESLint/Prettier)
+- **Sui dApp Kit** for blockchain integration
+- **React Query** for data fetching and caching
 
 ## Development Commands
 
@@ -27,17 +29,26 @@ This is a Next.js project named "sui-move-hello-world" that is a hybrid project 
 
 ### Frontend Structure
 - **App Directory**: Uses Next.js 13+ App Router in `app/`
-  - `app/layout.tsx` - Root layout with Geist font configuration
-  - `app/page.tsx` - Landing page with Next.js starter template
+  - `app/layout.tsx` - Root layout with Geist font configuration and Sui providers
+  - `app/page.tsx` - Home page that calls blockchain and displays message
+  - `app/providers.tsx` - Sui client and React Query providers configuration
+  - `app/hooks/useGetMessage.ts` - Custom hook for calling Move contract function
   - `app/globals.css` - Global Tailwind CSS styles
 
 ### Move Integration
 - **Move Package**: `move/hello/` contains a complete Sui Move package with working implementation
-  - `Move.toml` - Package manifest with MIT license and author attribution
+  - `Move.toml` - Package manifest with MIT license and deployed address
   - `sources/hello.move` - Main module implementing `get_message()` function returning "Hello, world!"
   - `tests/hello_tests.move` - Comprehensive test suite with positive and negative test cases
-  - Package address configured as `hello = "0x0"` for development
+  - **Deployed on Sui Devnet**: `0x159b80f0629ade2439d636749f99bafe5798741a6d5d64d03891a01dfe9c6aed`
   - Follows Sui Move coding conventions and includes proper error handling
+
+### Blockchain Integration
+- **Frontend Integration**: Uses `@mysten/dapp-kit` to interact with deployed Move contract
+  - `useGetMessage` hook calls `devInspectTransactionBlock` to retrieve data without gas costs
+  - Automatic BCS decoding of return values from Move functions
+  - Error handling and loading states for blockchain calls
+  - Real-time data fetching from Sui devnet
 
 ### Styling
 - Uses Tailwind CSS 4 with custom configuration

@@ -7,7 +7,7 @@ authors = ["dogafincan"]
 [dependencies]
 
 [addresses]
-hello = "0x0"
+hello = "0x159b80f0629ade2439d636749f99bafe5798741a6d5d64d03891a01dfe9c6aed"
 
 [dev-dependencies]
 
